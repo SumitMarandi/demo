@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    color: #686868;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #686868;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+/* Header styles */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 15px;;
+}
+
+.navigationMenu ul {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.navigationMenu a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Main content styles */
+
+.mainArea {
+    margin-bottom: 120px;
+}
+
+.topPara {
+    padding: 10px 15px;
+    min-height: 150px;
+    background: url(assets/doodle.png);
+    background-repeat: no-repeat;
+    background-position: right; 
+    background-size: contain;
+
+    background-color: #e1e1e1;
+}
+
+.para-2 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.centered {
+    padding: 0 20px;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #686868;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.ctaButton:hover {
+    background-color: #505050;
+}
+
+.para-lottie {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.para-3 ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.para-3 ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px #ccc;
+    background-color: #ccc;
+    border-radius: 10px;
+    padding: 5px;
+
+    font-size: 10px;
+}
+
+.centered ul li img {
+    width: 20px;
+}
+
+
+/* Join Us section styles */
+
+.joinForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.joinForm label, .joinForm input, .joinForm textarea {
+    margin: 2px 0;
+    padding: 5px;
+    font-size: 11px;
+}
+
+.joinForm label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+.submitButton {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #686868;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.submitButton:hover {
+    background-color: #505050;
+    cursor: pointer;
+}
+
+
+/* Footer styles */
+
+footer {
+    font-size: 13px;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.bottomNav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.bottomNav a:hover {
+    text-decoration: underline;
+}
