@@ -1,6 +1,6 @@
 // Pettomets - Main JavaScript file
 
-// Form submission handler for join form
+// Form submission handler for forms with class 'joinForm'
 document.addEventListener('DOMContentLoaded', function() {
     const joinForm = document.querySelector('.joinForm');
     
