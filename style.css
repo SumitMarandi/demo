@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    font-family: "Roboto", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Outfit:wght@100..900&display=swap');
 
 body {
     color: #686868;
     padding: 0;
     margin: 0;
     font-size: 14px;
+    font-family: "Outfit", sans-serif;
 }
 
 a {
@@ -21,6 +18,12 @@ ul {
     padding: 0;
 }
 
+h2 {
+    font-family: "BBH Hegarty", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
 
 /* Header styles */
 
@@ -29,7 +32,7 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    margin: 0 15px;;
+    margin: 0 15px;
 }
 
 .navigationMenu ul {
@@ -42,6 +45,11 @@ header {
     text-decoration: underline;
 }
 
+.logo {
+    font-family: "BBH Hegarty", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
 
 
 
@@ -92,8 +100,7 @@ header {
 
 .para-3 ul {
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .para-3 ul li {
@@ -103,13 +110,13 @@ header {
     border: solid 1px #ccc;
     background-color: #ccc;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
 
     font-size: 10px;
 }
 
 .centered ul li img {
-    width: 20px;
+    max-width: 25px;
 }
 
 
@@ -142,12 +149,75 @@ h4 {
     color: white;
     border-radius: 5px;
     font-size: 13px;
+
+    font-family: "Outfit", sans-serif;
 }
 
 .submitButton:hover {
     background-color: #505050;
     cursor: pointer;
 }
+
+
+
+/* Contact Us section styles */
+
+.contactUs {
+    margin: 20px 15px;
+}
+
+.contactUs h2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.contactUs ul a {
+    color: blue;
+}
+
+.contactUs ul a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* About Us section styles */
+.aboutUs {
+    margin: 20px 15px;
+}
+
+.aboutUs h2{
+    text-align: center;
+    text-decoration: underline;
+}   
+
+
+/* Terms and Conditions section styles */
+
+.terms {
+    margin: 20px 15px;
+}
+
+.terms h2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
+/* Privacy Policy section styles */
+
+.privacy {
+    margin: 20px 15px;
+}
+
+.privacy h2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+
 
 
 /* Footer styles */
