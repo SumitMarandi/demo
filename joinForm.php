@@ -1,53 +1,51 @@
 <?php
 
-// Simple form handler for join submissions
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-	header('Location: join.html');
-	exit;
-}
+    // Simple form handler for join submissions
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        header('Location: join.html');
+        exit;
+    }
 
-// Collect and sanitize inputs
-$name         = trim((string)filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$businessName = trim((string)filter_input(INPUT_POST, 'businessName', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$mobile       = trim((string)filter_input(INPUT_POST, 'mobile', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$email        = trim((string)filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-$city         = trim((string)filter_input(INPUT_POST, 'city', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$address      = trim((string)filter_input(INPUT_POST, 'address', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$description  = trim((string)filter_input(INPUT_POST, 'description', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-$termsAgreed  = filter_input(INPUT_POST, 'terms');
+    // Collect and sanitize inputs
+    $name         = trim((string)filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    $businessName = trim((string)filter_input(INPUT_POST, 'businessName', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    $mobile       = trim((string)filter_input(INPUT_POST, 'mobile', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    $email        = trim((string)filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
+    $city         = trim((string)filter_input(INPUT_POST, 'city', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    $address      = trim((string)filter_input(INPUT_POST, 'address', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    $description  = trim((string)filter_input(INPUT_POST, 'description', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    $termsAgreed  = filter_input(INPUT_POST, 'terms');
 
-// Basic validation
-if ($name === '' || $mobile === '' || $email === '' || $city === '' || $termsAgreed !== 'on') {
-	http_response_code(400);
-	echo 'Required fields are missing or terms not accepted.';
-	exit;
-}
+    if ($name === '' || $mobile === '' || $email === '' || $city === '' || $termsAgreed !== 'on') {
+        http_response_code(400);
+        echo 'Required fields are missing or terms not accepted.';
+        exit;
+    }
 
-$to      = 'pettomets@gmail.com';
-$subject = 'New On-boarding Submission - Pettomets';
+    $to      = 'pettomets@gmail.com';
+    $subject = 'New On-boarding Submission - Pettomets';
 
-$bodyLines = [
-	"New onboarding submission received:",
-	"Name: $name",
-	"Business Name: " . ($businessName !== '' ? $businessName : 'N/A'),
-	"Mobile: $mobile",
-	"Email: $email",
-	"City: $city",
-	"Address: " . ($address !== '' ? $address : 'N/A'),
-	"Service Description: " . ($description !== '' ? $description : 'N/A'),
-];
+    $bodyLines = [
+        "New onboarding submission received:",
+        "Name: $name",
+        "Business Name: " . ($businessName !== '' ? $businessName : 'N/A'),
+        "Mobile: $mobile",
+        "Email: $email",
+        "City: $city",
+        "Address: " . ($address !== '' ? $address : 'N/A'),
+        "Service Description: " . ($description !== '' ? $description : 'N/A'),
+    ];
 
-$message = implode("\n", $bodyLines);
+    $message = implode("\n", $bodyLines);
 
-// Set simple headers
-$headers = 'From: no-reply@pettomets.com' . "\r\n" .
-		   'Reply-To: ' . ($email !== '' ? $email : 'no-reply@pettomets.com') . "\r\n" .
-		   'X-Mailer: PHP/' . phpversion();
+    // Set simple headers
+    $headers = 'From: no-reply@pettomets.com' . "\r\n" .
+            'Reply-To: ' . ($email !== '' ? $email : 'no-reply@pettomets.com') . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
 
-// Attempt to send email; continue to thank-you screen regardless
-@mail($to, $subject, $message, $headers);
+    // Attempt to send email; continue to thank-you screen regardless
+    @mail($to, $subject, $message, $headers);
 
-// Thank you page with 5s countdown redirect
 ?>
 <!DOCTYPE html>
 <html lang="en">
