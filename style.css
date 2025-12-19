@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Outfit:wght@100..900&display=swap');
 
 body {
-    color: #686868;
     padding: 0;
     margin: 0;
     font-size: 14px;
@@ -32,7 +31,8 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    margin: 0 15px;
+    padding: 0 15px;
+    background-color: beige;
 }
 
 .navigationMenu ul {
@@ -48,7 +48,7 @@ header {
 .logo {
     font-family: "BBH Hegarty", sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 
@@ -62,10 +62,10 @@ header {
 .topPara {
     padding: 10px 15px;
     min-height: 150px;
-    background: url(assets/doodle.png);
+    background: url(assets/home.jpeg);
     background-repeat: no-repeat;
     background-position: right; 
-    background-size: contain;
+    background-size: cover;
 
     background-color: #e1e1e1;
 }
@@ -118,6 +118,8 @@ header {
 .centered ul li img {
     max-width: 25px;
 }
+
+
 
 
 /* Join Us section styles */
